@@ -32,5 +32,11 @@ public class Bullet : MonoBehaviour
         _impactEffect.transform.eulerAngles = other.contacts[0].normal;
 
         _impactEffect.Play(true);
+
+        var enemyController = other.collider.GetComponentInParent<EnemyController>();
+        if (enemyController != null)
+        {
+            enemyController.Dead();
+        }
     }
 }
