@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private RiffleWeapon _riffleWeapon;
+    
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
+        
+        _riffleWeapon.Enable();
     }
 
     void Update()

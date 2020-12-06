@@ -51,4 +51,9 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Crouch.triggered;
     }
+
+    public bool PlayerFired()
+    {
+        return playerControls.Player.Fire.triggered;
+    }
 }
